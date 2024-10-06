@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>innerHTML</h1>
+    <p id="text">이번 여름에는 어디로 여행을 갈까요?</p>
+
+    <script>
+      document.getElementById("text").addEventListener("click", function () {
+        let userInput = prompt("HTML 텍스트 혹은 그냥 텍스트를 입력하세요");
+        if (userInput !== null) {
+          this.innerHTML = userInput;
+        }
+      });
+    </script>
+  </body>
+</html>
