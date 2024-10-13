@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제 2</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("expression");
+        const resultDisplay = document.getElementById("result");
+
+        input.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            try {
+              const result = eval(input.value);
+              resultDisplay.textContent = result;
+            } catch (e) {
+              resultDisplay.textContent = "잘못된 수식입니다.";
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>계산기 만들기</h1>
+    <p>수식을 입력하고 Enter를 입력하세요.</p>
+    <label for="expression">식:</label>
+    <input type="text" id="expression" placeholder="수식을 입력하시오" />
+    <p>값: <span id="result"></span></p>
+  </body>
+</html>
