@@ -1,0 +1,22 @@
+<!-- innerHTML을 통해 태그 안의 문자를 읽어 올 수 있다. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1</title>
+    <script>
+      const change = () => {
+        const pTag = document.getElementById("pp");
+        pTag.style.backgroundColor = "green";
+        console.log(pTag.innerHTML);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>css 스타일 동적 변화</h1>
+    <hr />
+    <p id="pp">이것은 문장입니다</p>
+    <input type="button" value="스타일변경" onclick="change()" />
+  </body>
+</html>

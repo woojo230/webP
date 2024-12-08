@@ -1,0 +1,23 @@
+<!-- this를 이용해 봅시다. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const change = (obj, color, size) => {
+        obj.style.color = color;
+        obj.style.fontSize = size;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>this 활용</h1>
+    <hr />
+    <button onclick="change(this, 'red', '30px')">Red 버튼</button>
+    <!-- onclick 내부 매개변수 보낼때는 소문자 사용해야 함에 주의 -->
+    <!-- <button>객체가 매개변수로 보내짐 -->
+    <button onclick="change(this, 'blue', '30px')">Blue 버튼</button>
+  </body>
+</html>

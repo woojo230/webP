@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로토타입</title>
+    <script>
+      function Student(korName, engName, studentCount) {
+        this.korName = korName;
+        this.engName = engName;
+        this.studentCount = studentCount;
+        this.register = function () {
+          this.studentCount++;
+        };
+        this.unregister = function () {
+          this.studentCount--;
+        };
+        this.getStudentCount = function () {
+          return this.studentCount;
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <h3>3. 프로토타입 객체</h3>
+    <br />
+    <script>
+      let obj1 = new Student("프로그래밍 언어론", "Programming Language", 0);
+      document.write("교과목 이름 = ");
+      document.write(obj1.korName + "<br>");
+      document.write("교과목 영어 이름 = ");
+      document.write(obj1.engName + "<br>");
+      document.write("등록 학생 수 = ");
+      document.write(obj1.studentCount + "<br>");
+      document.write("after register, 등록 학생 수=");
+      obj1.register();
+      document.write(obj1.getStudentCount());
+    </script>
+  </body>
+</html>

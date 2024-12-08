@@ -1,0 +1,26 @@
+<!-- HTML 태그의 동적 생성 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const create = () => {
+        const newDiv = document.createElement("div");
+        const parent = document.getElementById("parent");
+        newDiv.innerHTML = "새로 생성된 Div";
+        newDiv.setAttribute("id", "myId");
+        newDiv.style.backgroundColor = "red";
+        parent.appendChild(newDiv);
+        newDiv.addEventListener("click", () => {
+          parent.removeChild(newDiv);
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div onclick="create()">여기를 누르면 태그 생성</div>
+    <p id="parent"></p>
+  </body>
+</html>

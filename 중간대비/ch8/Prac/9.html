@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>라면먹고 갈래?</title>
+    <script>
+      const add = (obj) => {
+        let input = prompt("내용을 추가하세용");
+        let newLi = document.createElement("li");
+        newLi.innerHTML = input;
+        obj.appendChild(newLi);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>라면을 끓이는 순서</h1>
+    <hr />
+    <ol type="A" style="background-color: yellowgreen" onclick="add(this)">
+      <li>물을 끓인다.</li>
+    </ol>
+  </body>
+</html>

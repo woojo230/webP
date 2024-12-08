@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // DOMContentLoaded 이벤트 핸들러 내에서 정의된 함수들은 그 핸들러의 스코프(scope) 내에서만 유효합니다.
+      // 즉, 그 함수들은 해당 이벤트 핸들러가 실행된 후에만 사용할 수 있으며,
+      // 이벤트 핸들러 외부에서는 참조할 수 없습니다.
+
+      // put, back, reset, result 함수는 DOMContentLoaded 핸들러 내에서만 정의됩니다.
+      // 이들은 지역 함수이기 때문에, 이벤트 핸들러 외부에서는 접근할 수 없습니다.
+
+      // HTML 요소의 onclick 속성에서 put, back, reset, result 함수를 호출하려고 할 때,
+      // 브라우저는 해당 함수가 전역 스코프에 존재하지 않는다고 판단하고 ReferenceError를 발생시킵니다.
+
+      // 이러한 문제를 해결하기 위해서는:
+      //   전역 스코프에 함수 정의: let, const 또는 function 키워드를 사용하여 함수를 전역 스코프에 정의합니다.
+      //   이벤트 리스너 사용: 버튼 클릭 이벤트 리스너를 코드 내에서 직접 정의하여, 해당 스코프 내에서만 작동하도록 할 수 있습니다.
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const text = document.getElementById("exp"); // DOM이 준비되면 text를 정의
+
+        // 함수 정의
+        window.put = (e) => {
+          text.value += e; // 입력값을 추가
+        };
+
+        window.back = () => {
+          text.value = text.value.substring(0, text.value.length - 1); // 마지막 문자 제거
+        };
+
+        window.reset = () => {
+          text.value = ""; // 입력값 초기화
+        };
+
+        window.result = () => {
+          try {
+            text.value = eval(text.value); // 계산 결과 표시
+          } catch (error) {
+            text.value = "Error"; // 오류 처리
+          }
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <h1>계산기 만들기</h1>
+    <hr />
+    <input type="text" value="" id="exp" />
+    <br />
+    <input type="button" value="back" onclick="back()" />
+    <input type="button" value="ce" onclick="reset()" />
+    <input type="button" value="c" onclick="reset()" />
+    <input type="button" value="=" onclick="result()" />
+    <br />
+    <input type="button" value="7" onclick="put('7')" />
+    <input type="button" value="8" onclick="put('8')" />
+    <input type="button" value="9" onclick="put('9')" />
+    <input type="button" value="/" onclick="put('/')" />
+    <br />
+    <input type="button" value="4" onclick="put('4')" />
+    <input type="button" value="5" onclick="put('5')" />
+    <input type="button" value="6" onclick="put('6')" />
+    <input type="button" value="*" onclick="put('*')" />
+    <br />
+    <input type="button" value="1" onclick="put('1')" />
+    <input type="button" value="2" onclick="put('2')" />
+    <input type="button" value="3" onclick="put('3')" />
+    <input type="button" value="-" onclick="put('-')" />
+    <br />
+    <input type="button" value="0" onclick="put('0')" />
+    <input type="button" value="+" onclick="put('+')" />
+    <input type="button" value="none" />
+    <input type="button" value="none" />
+  </body>
+</html>

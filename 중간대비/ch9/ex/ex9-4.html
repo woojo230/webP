@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const init = () => {
+        p = document.getElementById("p");
+        p.mouseover = () => {
+          this.style.backgroundColor = "red";
+        };
+        p.addEventListener("mouseout", () => {
+          this.style.backgroundColor = "blue";
+        });
+      };
+    </script>
+  </head>
+  <body onload="init()">
+    <h3>addEventListner를 이용한 리그너 등록</h3>
+    <hr />
+    <p id="p">마우스 올리면 red색상으로 변경</p>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // script 를 <head> 부분에 작성하게 되면 JavaScript 코드가 실행되기 전에 HTML 요소가 완전히 로드되지 않음.
+      // 따라서 document.getElementById("step")를 사용할 때, 스크립트가 <ol id="step"> 요소를 찾을 수 없어 오류가 발생
+      // 이 문제를 해결하려면..
+      // 방법 1 : DOMContentLoaded 이벤트 사용
+      // 방법 2 : <script> 태그를 </body> 태그 바로 위로 이동
+        
+      // Version 2
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("step").addEventListener("click", () => {
+          let newStep = prompt("라면 끓이는 순서 추가");
+          let newList = document.createElement("li");
+          newList.innerHTML = newStep;
+          document.getElementById("step").appendChild(newList);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>라면 끓이는 순서</h1>
+    <hr />
+    <ol type="A" id="step" style="background-color: yellowgreen">
+      <li>물을 끓인다</li>
+    </ol>
+  </body>
+</html>

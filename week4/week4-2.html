@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리너럴 표기법</title>
+    <script>
+      let webP = {
+        korName: "웹프로그래밍",
+        engName: "Web Programming",
+        student: 0,
+        register: function () {
+          this.student++;
+        },
+
+        unregister: function () {
+          this.student--;
+        },
+
+        getStudentCount: function () {
+          return this.student;
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <h3>2. 리터럴 표기법</h3>
+    <br />
+    <script>
+      document.write("교과목 이름 = ");
+      document.write(webP.korName + "<br>");
+      document.write("교과목 영어 이름 = ");
+      document.write(webP.engName + "<br>");
+      document.write("등록 학생 수 = ");
+      document.write(webP.student + "<br>");
+      document.write("after register, 등록 학생 수=");
+      webP.register();
+      document.write(webP.getStudentCount());
+    </script>
+  </body>
+</html>

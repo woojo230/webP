@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const exp = document.getElementById("input");
+        const result = document.getElementById("output");
+        exp.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            try {
+              const answer = eval(exp.value); //해당 함수가 exp.addEventListner 함수 내부에 작성되어야 함.
+              //시간 순서에 따라서 만약 밖에 작성시 input값을 주기도 전에 eval 함수가 실행되어 버림.
+              result.value = answer;
+            } catch (error) {
+              result.value = "오류";
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>계산기 만들기</h1>
+    <hr />
+    <p>수식을 입력하고 Enter를 입력하시오</p>
+    <div>식 <input type="text" id="input" value="" /></div>
+    <div>값 <input type="text" id="output" value="" /></div>
+  </body>
+</html>

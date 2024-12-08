@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>innerHTML</h1>
+    <hr />
+    <p id="text">이번 여름에는 어디로 여행을 갈까요?</p>
+
+    <script>
+      // DOM이 완전히 로드된 후에 이벤트 리스너를 추가합니다.
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("text").addEventListener("click", function () {
+          let input = prompt("내용을 입력하시오");
+          // 입력된 내용을 innerHTML로 설정
+          if (input !== null) {
+            this.innerHTML = input; // 'this'는 클릭된 요소를 가리킴
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

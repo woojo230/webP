@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Version 1
+      // const change = (e) => {
+      //   e.target.style.fontSize = "1.3rem";
+      // };
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const list = document.getElementsByTagName("li");
+      //   for (let i = 0; i < list.length; i++) {
+      //     list[i].addEventListener("click", change); //함수 호출 change() 와 함수참조 change에 대한 이해!
+      //   }
+      // });
+      //   괄호 없이 함수를 전달하면 그 함수에 대한 참조가 전달됩니다. 이는 이벤트가 발생할 때 실행되도록 예약.
+      //   괄호 ()를 사용하면 함수를 즉시 실행, 이벤트 리스너가 등록될 때 함수가 즉시 실행되어버림.
+      //   이벤트가 발생하지 않았는데, 함수가 호출되는 것은 당연히 오류로 이어짐.
+
+      // version 2-1
+      document.addEventListener("DOMContentLoaded", () => {
+        const list = document.getElementsByTagName("li");
+        for (let i = 0; i < list.length; i++) {
+          list[i].addEventListener("click", (e) => {
+            e.target.style.fontSize = "1.3rem";
+          });
+        }
+      });
+      // 이 코드를 예시로 들어보자면..
+      // 사용자가 click 했을때, click에 대한 다양한 정보를 가지고 있는 "이벤트 객체" 가 매개변수로 전달됨.
+      // 따라서 e에는 "이벤트 객체"가 들어있음.
+      // 그리고 이벤트 객체에는 target, type, currentTarget, clientX 등등의 "이벤트 핸들러 함수"들이 들어있음.
+      // 그래서 우리가 필요한 이벤트 객체 매서드들을 가져다가 사용하면 되는 것임.
+    </script>
+  </head>
+  <body>
+    <h3>아이템을 클릭하면 1.3배 크기로</h3>
+    <hr />
+    <p>여름방학때 하고 싶은 것들</p>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </body>
+</html>

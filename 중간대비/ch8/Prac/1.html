@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // document.addEventListener('DOMContentLoaded', ()=>{})는
+      // JavaScript에서 페이지가 완전히 로드되기 전에 DOM(Document Object Model) 요소들이 준비되었을 때
+      // 실행할 코드를 설정하는 방법입니다
+      // 즉 페이지가 로드되면 실행할 함수를 작성한 것.
+      document.addEventListener("DOMContentLoaded", () => {
+        const Li = document.getElementsByTagName("li");
+        for (let i = 0; i < Li.length; i++) {
+          Li[i].style.color = "red";
+        }
+      });
+      const change = (obj) => {
+        obj.style.backgroundColor = "green";
+      };
+    </script>
+  </head>
+  <body>
+    <h1>라면을 끓이는 순서</h1>
+    <hr />
+    <ol type="A" onclick="change(this)">
+      <li>물을 끓인다</li>
+      <li>라면과 스프를 넣는다</li>
+      <li>파를 썰어 넣는다</li>
+      <li>5분후 맛있게 먹는다</li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>직접 객체 만들기</title>
+    <script>
+      function register() {
+        this.student++;
+      }
+      function unregister() {
+        this.student--;
+      }
+      function getStudentCount() {
+        return this.student;
+      }
+      let webP = new Object();
+      webP.korName = "웹프로그래밍";
+      webP.engName = "Web Programming";
+      webP.student = 0;
+      webP.register = register;
+      webP.unregister = unregister;
+      webP.getStudentCount = getStudentCount;
+    </script>
+  </head>
+  <body>
+    <h3>1. 직접 객체 만들기</h3>
+    <br />
+    <script>
+      document.write("교과목 이름 = ");
+      document.write(webP.korName + "<br>");
+      document.write("교과목 이름 = ");
+      document.write(webP.engName + "<br>");
+      document.write("등록 학생 수 = ");
+      document.write(webP.student + "<br>");
+      document.write("after register, 등록 학생 수 = ");
+      webP.register();
+      document.write(webP.getStudentCount());
+    </script>
+  </body>
+</html>

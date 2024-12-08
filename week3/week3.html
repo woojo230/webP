@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Web Programming</h1>
+    <hr />
+    <ul>
+      <li><a href="#week1">Week1</a></li>
+      <li><a href="#week2">Week2</a></li>
+      <li><a href="#week3">Week3</a></li>
+    </ul>
+    <ol>
+      <li id="week1"><strong>Week 1</strong></li>
+      <ul>
+        <li>강의개요</li>
+        <li>Visual Stuido Code</li>
+        <ol>
+          <li>설치</li>
+          <li>유용한 plug-ins</li>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+          </ul>
+        </ol>
+      </ul>
+      <hr />
+      <li id="week2">
+        Week 2:
+        <strong style="text-decoration: underline; color: blue"
+          >HTML Review</strong
+        >
+      </li>
+      <br />
+      <strong>Input Types</strong>
+      <br />
+      <br />
+      <ins>Check Box</ins>
+      <br />
+      <br />
+      <input type="checkbox" value="1" />HTML
+      <input type="checkbox" value="2" />CSS3
+      <input type="checkbox" value="3" />JavaScript
+      <br />
+      <br />
+      <ins>Radio Button</ins>
+      <br />
+      <br />
+      <!-- name 속성이 있어야 radio button 중 하나만 선택 가능 -->
+      <input type="radio" name="Button" value="1" />HTML5
+      <input type="radio" name="Button" value="2" />CSS3
+      <input type="radio" name="Button" value="3" />Java Script
+      <br />
+      <br />
+      <ins>Combo Box</ins>
+      <br />
+      <br />
+      <select name="box" id="">
+        <option value="1">HTML5</option>
+        <option value="2">CSS3</option>
+        <option value="3">Java Script</option>
+      </select>
+      <li id="week3"><strong>Week 3</strong></li>
+      <!-- border 속성이 제대로 적용되지 않는 이유는 border를 설정할 때 속성을 완전히 지정하지 않았기 때문
+       border를 설정하려면 두께, 스타일, 색상을 모두 지정해야 함
+       예를 들어, border: 2px solid black;과 같이 설정해야 함-->
+      <div
+        style="
+          width: 100px;
+          height: 100px;
+          background-color: bisque;
+          border: 1px solid black; /*border 속성을 줄 때는 두께 스타일 색상을 모두 설정해야 함.*/
+        "
+      ></div>
+    </ol>
+  </body>
+</html>

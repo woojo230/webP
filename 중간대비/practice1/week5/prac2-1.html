@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Version 1
+      const addList = (parent) => {
+        let newStep = prompt("순서를 입력하시오");
+        let newList = document.createElement("li");
+        newList.innerHTML = newStep;
+        parent.appendChild(newList);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>라면 끓이는 순서</h1>
+    <hr />
+    <ol
+      type="A"
+      id="step"
+      style="background-color: yellowgreen"
+      onclick="addList(this)"
+    >
+      <li>물을 끓인다</li>
+    </ol>
+  </body>
+</html>

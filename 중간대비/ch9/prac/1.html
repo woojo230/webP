@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const calculate = (e) => {
+        if (e.key === "Enter") {
+          const input = e.target.value;
+          const output = document.getElementById("result");
+          try {
+            const result = eval(input);
+            output.value = result;
+          } catch {
+            result.value = "잘못된 수식";
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>계산기 만들기</h1>
+    <hr />
+    <p>수식을 입력하고 enter를 입력하세요</p>
+    <p>식<input type="text" onkeydown="calculate(event)" /></p>
+    <p>값<input type="text" id="result" value="" /></p>
+  </body>
+</html>
